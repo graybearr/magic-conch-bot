@@ -2,6 +2,7 @@ package me.torrha.magicConchBot;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import me.torrha.magicConchBot.listeners.EventListener;
+import me.torrha.magicConchBot.listeners.CommandManager;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -25,7 +26,7 @@ public class MagicConchBot {
         builder.enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT);
         shardManager = builder.build();
 
-        shardManager.addEventListener(new EventListener());
+        shardManager.addEventListener(new EventListener(), new CommandManager());
     }
 
     public Dotenv getConfig() {
