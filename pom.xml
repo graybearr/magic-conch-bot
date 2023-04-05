@@ -48,7 +48,7 @@
                 <configuration>
                     <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>me.torrha.MagicConchBot</mainClass>
+                            <mainClass>me.torrha.magicConchBot.MagicConchBot</mainClass>
                         </transformer>
                     </transformers>
                     <createDependencyReducedPom>false</createDependencyReducedPom>

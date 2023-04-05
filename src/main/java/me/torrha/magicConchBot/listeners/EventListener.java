@@ -1,4 +1,4 @@
-package me.torrha.listeners;
+package me.torrha.magicConchBot.listeners;
 
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
@@ -12,12 +12,13 @@ public class EventListener extends ListenerAdapter {
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         User user = event.getAuthor();
+        User bot = event.getJDA().getSelfUser();
         Message message = event.getMessage();
         if (user.isBot()) return;
-        boolean isMentioned = message.getMentions().getUsers().stream().anyMatch(m -> m.getIdLong() == 1082596268070678648L);
+        boolean isMentioned = message.getMentions().getUsers().stream().anyMatch(m -> m.getIdLong() == bot.getIdLong());
 
         if (isMentioned) {
-            String content = message.getContentRaw().replaceAll("<@1082596268070678648>", "");
+            String content = message.getContentRaw().replaceAll(bot.getAsMention(), "");
             String[] answers = {"안돼.", "그래.", "다시 한 번 물어봐.", "둘 다 먹지마.", "굶어.", "그것도 안돼.", "가만히 있어."};
             Random rand = new Random();
 

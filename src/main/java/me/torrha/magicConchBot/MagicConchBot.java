@@ -1,7 +1,7 @@
-package me.torrha;
+package me.torrha.magicConchBot;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import me.torrha.listeners.EventListener;
+import me.torrha.magicConchBot.listeners.EventListener;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
